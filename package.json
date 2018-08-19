@@ -1,0 +1,23 @@
+{
+  "name": "ajv-bsontype-coerce",
+  "version": "1.0.4",
+  "description": "coerces mongodb's bsonType validators",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "BoLaMN",
+    "url": "https://github.com/BoLaMN"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BoLaMN/ajv-bsontype-coerce"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ajv-bsontype": "^1.0.4",
+    "bson": "^3.0.2",
+    "lodash": "^4.17.10"
+  }
+}
