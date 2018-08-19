@@ -1,5 +1,14 @@
-import { toArray, toString, toNumber, toPlainObject, isPlainObject, isString, isNumber } from 'lodash';
-import { MinKey, MaxKey, Long, Double, Int32, Decimal128, Binary, BSONRegExp, Code, Symbol, Timestamp, ObjectId } from 'bson';
+'use strict';
+
+const {
+  toArray, toString, toNumber, toPlainObject,
+  isPlainObject, isString, isNumber
+} = require('lodash');
+
+const {
+  MinKey, MaxKey, Long, Double, Int32, Decimal128,
+  Binary, BSONRegExp, Code, Symbol, Timestamp, ObjectId
+} = require('bson');
 
 module.exports = (ajv) => {
 
