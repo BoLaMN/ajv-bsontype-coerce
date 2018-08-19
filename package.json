@@ -1,6 +1,6 @@
 {
   "name": "ajv-bsontype-coerce",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "coerces mongodb's bsonType validators",
   "main": "index.js",
   "scripts": {

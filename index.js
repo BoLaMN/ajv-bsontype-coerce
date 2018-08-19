@@ -147,19 +147,20 @@ module.exports = (ajv) => {
     modifying: true,
     valid: true,
     compile(schema, parentSchema) {
+      if (!parentSchema.bsonType) {
+        throw new Error('Missing bsonType. To use `coerce: true`, `bsonType: [...]` is required.');
+      }
 
-      return (data, path, object, key) => {
-        if (!parentSchema.coerce || !object) { return; }
+      return function(data, path, object, key) {
+        if (!object) { return; }
 
-        let j = 0;
-        const l = schema.length;
+        let type = parentSchema.bsonType;
 
-        while (j < l) {
-          data = transform[schema[j]](data, cfg);
-          j++;
+        if (Array.isArray(type)) {
+          type = type[0];
         }
 
-        object[key] = data;
+        object[key] = coerce(data, type);
 
       };
     }
